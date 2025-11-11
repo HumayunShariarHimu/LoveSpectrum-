@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Spectrum</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Style */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background: linear-gradient(to bottom right, #ffe6f0, #fff0f5);
+            color: #333;
+            transition: all 0.3s;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(135deg, #ff8fb1, #ff5f87);
+            color: #fff;
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.8rem;
+            text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        nav button {
+            padding: 0.6rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            background: #ffb3c1;
+            color: #fff;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        nav button.active, nav button:hover {
+            background: #d10047;
+            transform: scale(1.1);
+        }
+
+        /* Main Content */
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: #fff0f5;
+            padding: 1.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+        }
+
+        .card h2 {
+            margin-top: 0;
+            color: #d10047;
+            font-size: 1.8rem;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #d10047;
+            font-size: 1.4rem;
+        }
+
+        .card p {
+            margin: 0.5rem 0 0 0;
+            line-height: 1.6;
+            font-size: 1rem;
+        }
+
+        /* Tooltip */
+        .tooltip {
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            background: #d10047;
+            color: #fff;
+            padding: 0.3rem 0.7rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            display: none;
+        }
+
+        .card:hover .tooltip {
+            display: inline-block;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            color: #fff;
+            background: linear-gradient(135deg, #ff5f87, #ff8fb1);
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Love Spectrum</h1>
+        <p>ভালোবাসার বৈচিত্র্যময় দিকগুলো অন্বেষণ করুন</p>
+    </header>
+
+    <nav>
+        <button data-section="definition" class="active">সংজ্ঞা</button>
+        <button data-section="chemical">রাসায়নিক</button>
+        <button data-section="psychological">সাইকোলজিক্যাল</button>
+        <button data-section="social">সামাজিক</button>
+        <button data-section="personal">ব্যক্তিগত</button>
+    </nav>
+
+    <main id="content">
+        <!-- কন্টেন্ট লোড হবে -->
+    </main>
+
+    <footer>
+        <p>Love Spectrum । Humayun Shariar Himu</p>
+    </footer>
+
+    <script>
+        const data = {
+            "love": {
+                "definition": "ভালোবাসা হলো অনুভূতি, মানসিক অবস্থা, এবং সম্পর্ক যা মানুষকে সংযোগ ও সুখ প্রদান করে। এটি আবেগ, যত্ন, সমর্পণ এবং আনন্দের সমন্বয়।",
+                "chemical": {
+                    "ডোপামিন": "আনন্দ এবং সন্তুষ্টি বোধ করায়। প্রেমের প্রাথমিক উত্তেজনা বৃদ্ধি করে।",
+                    "অক্সিটোসিন": "সম্পর্ক ও বন্ধুত্বকে শক্তিশালী করে।",
+                    "সেরোটোনিন": "মানসিক স্থিতিশীলতা ও সুখের অনুভূতি বৃদ্ধি করে।",
+                    "এন্ডোরফিন": "স্বাভাবিক সুখ ও ব্যথা হ্রাসে সাহায্য করে।"
+                },
+                "psychological": {
+                    "আবেগগত সংযোগ": "প্রিয়জনের প্রতি অনুভূতিগত আকর্ষণ।",
+                    "নির্ভরতা": "মানসিক সমর্থন ও নিরাপত্তা।",
+                    "স্ব-উন্নতি প্রেরণা": "ভালোবাসা মানুষকে আরও ভালো মানুষ হতে প্ররোচিত করে।",
+                    "সংঘর্ষ সমাধান দক্ষতা": "সম্পর্কের মধ্যে সমস্যা সমাধানে সহনশীলতা বৃদ্ধি পায়।"
+                },
+                "social": {
+                    "সম্পর্ক ও পরিবার": "পারিবারিক বন্ধন ও সামাজিক বন্ধনকে দৃঢ় করে।",
+                    "সংস্কৃতি ও সামাজিক মূল্যবোধ": "সমাজ ও সংস্কৃতি প্রেমের ধরন ও প্রকাশের উপর প্রভাব ফেলে।",
+                    "কমিউনিটি সংযোগ": "বন্ধুত্ব, সহকর্মী ও সমাজের সঙ্গে সম্পর্ক উন্নত করে।"
+                },
+                "personal": {
+                    "স্ব-সম্মান": "মানসিক স্বস্তি ও আত্মসম্মান বৃদ্ধি করে।",
+                    "সুখ ও মানসিক স্বাস্থ্য": "প্রেমিত সম্পর্ক মানসিক চাপ কমায়।",
+                    "ব্যক্তিগত বৃদ্ধি": "নতুন অভিজ্ঞতা, শেখা এবং মানসিক স্থিতিশীলতা বৃদ্ধি পায়।"
+                }
+            }
+        };
+
+        const content = document.getElementById("content");
+        const buttons = document.querySelectorAll("nav button");
+
+        function loadSection(section) {
+            content.innerHTML = "";
+            if(section === "definition") {
+                const div = document.createElement("div");
+                div.className = "card";
+                div.innerHTML = `<h2>সংজ্ঞা</h2><p>${data.love.definition}</p>`;
+                content.appendChild(div);
+            } else {
+                const sectionData = data.love[section];
+                for(const key in sectionData) {
+                    const div = document.createElement("div");
+                    div.className = "card";
+                    div.innerHTML = `<h3>${key}</h3><p>${sectionData[key]}</p>`;
+                    // হরমোন সেকশনে ইন্টারেক্টিভ টুলটিপ
+                    if(section === "chemical") {
+                        const tooltip = document.createElement("span");
+                        tooltip.className = "tooltip";
+                        tooltip.textContent = "হরমোনের প্রভাব";
+                        div.appendChild(tooltip);
+                    }
+                    content.appendChild(div);
+                }
+            }
+        }
+
+        // বাটন ক্লিক ইভেন্ট
+        buttons.forEach(btn => {
+            btn.addEventListener("click", () => {
+                buttons.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+                const section = btn.getAttribute("data-section");
+                loadSection(section);
+            });
+        });
+
+        // ডিফল্ট লোড
+        loadSection("definition");
+    </script>
+</body>
+</html>
